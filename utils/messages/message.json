@@ -1,0 +1,17 @@
+{
+    "errorMsg": {
+      "invalidBody": "Cannot process request body.",
+      "usernameNotAvailable": "Username is not available.Choose another username.",
+      "notAuthorized": "You are not authorized to access this resource.",
+      "notAuthenticated": "You are not authenticated to access this resource.",
+      "notFound": "%s not found.",
+      "duplicateData": "Duplicate %s found",
+      "tokenExpired": "Access Token has expired."
+    },
+    "successMsg": {
+      "create": "%s created successfully.",
+      "fetch": "%s fetched successfully",
+      "update": "%s updated successfully",
+      "delete": "%s deleted successfully"
+    }
+  }
