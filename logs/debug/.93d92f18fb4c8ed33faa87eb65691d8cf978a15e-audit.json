@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/home/prashant/Documents/node.js/school-management-system/logs/debug/.93d92f18fb4c8ed33faa87eb65691d8cf978a15e-audit.json",
+    "files": [
+        {
+            "date": 1631180333510,
+            "name": "/home/prashant/Documents/node.js/school-management-system/logs/debug/2021-09-09.log",
+            "hash": "3a4cb448513ce7697d083a854f03ac27"
+        }
+    ]
+}

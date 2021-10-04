@@ -1,0 +1,299 @@
+2021-09-16 16:21:48 [32minfo[39m: initalizing keycloak
+2021-09-16 16:21:51 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models
+2021-09-16 16:22:59 [32minfo[39m: initalizing keycloak
+2021-09-16 16:23:01 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/
+2021-09-16 16:24:20 [32minfo[39m: initalizing keycloak
+2021-09-16 16:24:22 [32minfo[39m: =================================
+2021-09-16 16:24:22 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:24:22 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:24:22 [32minfo[39m: =================================
+2021-09-16 16:27:56 [32minfo[39m: initalizing keycloak
+2021-09-16 16:27:56 [32minfo[39m: =================================
+2021-09-16 16:27:56 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:27:56 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:27:56 [32minfo[39m: =================================
+2021-09-16 16:30:00 [32minfo[39m: initalizing keycloak
+2021-09-16 16:30:00 [32minfo[39m: =================================
+2021-09-16 16:30:00 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:30:00 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:30:00 [32minfo[39m: =================================
+2021-09-16 16:31:14 [32minfo[39m: initalizing keycloak
+2021-09-16 16:31:14 [32minfo[39m: =================================
+2021-09-16 16:31:14 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:31:14 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:31:14 [32minfo[39m: =================================
+2021-09-16 16:32:06 [32minfo[39m: initalizing keycloak
+2021-09-16 16:32:06 [32minfo[39m: =================================
+2021-09-16 16:32:06 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:32:06 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:32:06 [32minfo[39m: =================================
+2021-09-16 16:32:07 [31merror[39m: SequelizeConnectionError: Access denied for user ''@'localhost'
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:126:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:41:27 [32minfo[39m: initalizing keycloak
+2021-09-16 16:41:27 [32minfo[39m: =================================
+2021-09-16 16:41:27 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:41:27 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:41:27 [32minfo[39m: =================================
+2021-09-16 16:41:27 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: NO)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:42:21 [32minfo[39m: initalizing keycloak
+2021-09-16 16:42:21 [32minfo[39m: =================================
+2021-09-16 16:42:21 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:42:21 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:42:21 [32minfo[39m: =================================
+2021-09-16 16:42:22 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:43:54 [32minfo[39m: initalizing keycloak
+2021-09-16 16:43:54 [32minfo[39m: =================================
+2021-09-16 16:43:54 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:43:54 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:43:54 [32minfo[39m: =================================
+2021-09-16 16:43:54 [31merror[39m: SequelizeHostNotFoundError: getaddrinfo ENOTFOUND undefined
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:44:17 [32minfo[39m: initalizing keycloak
+2021-09-16 16:44:17 [32minfo[39m: =================================
+2021-09-16 16:44:17 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:44:17 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:44:17 [32minfo[39m: =================================
+2021-09-16 16:44:17 [31merror[39m: SequelizeConnectionError: Access denied for user 'undefined'@'localhost'
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:126:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:44:27 [32minfo[39m: initalizing keycloak
+2021-09-16 16:44:27 [32minfo[39m: =================================
+2021-09-16 16:44:27 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:44:27 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:44:27 [32minfo[39m: =================================
+2021-09-16 16:44:27 [31merror[39m: SequelizeConnectionError: Access denied for user 'undefined'@'localhost'
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:126:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:44:58 [32minfo[39m: initalizing keycloak
+2021-09-16 16:44:58 [32minfo[39m: =================================
+2021-09-16 16:44:58 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:44:58 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:44:58 [32minfo[39m: =================================
+2021-09-16 16:44:58 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:45:48 [32minfo[39m: initalizing keycloak
+2021-09-16 16:45:48 [32minfo[39m: =================================
+2021-09-16 16:45:48 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:45:48 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:45:48 [32minfo[39m: =================================
+2021-09-16 16:45:48 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:46:49 [32minfo[39m: initalizing keycloak
+2021-09-16 16:46:49 [32minfo[39m: =================================
+2021-09-16 16:46:49 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:46:49 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:46:49 [32minfo[39m: =================================
+2021-09-16 16:46:49 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:47:13 [32minfo[39m: initalizing keycloak
+2021-09-16 16:47:13 [32minfo[39m: =================================
+2021-09-16 16:47:13 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:47:13 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:47:13 [32minfo[39m: =================================
+2021-09-16 16:47:13 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:50:18 [32minfo[39m: initalizing keycloak
+2021-09-16 16:50:18 [32minfo[39m: =================================
+2021-09-16 16:50:18 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:50:18 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:50:18 [32minfo[39m: =================================
+2021-09-16 16:50:18 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:50:45 [32minfo[39m: initalizing keycloak
+2021-09-16 16:50:45 [32minfo[39m: =================================
+2021-09-16 16:50:45 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:50:45 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:50:45 [32minfo[39m: =================================
+2021-09-16 16:50:46 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:51:03 [32minfo[39m: initalizing keycloak
+2021-09-16 16:51:03 [32minfo[39m: =================================
+2021-09-16 16:51:03 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:51:03 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:51:03 [32minfo[39m: =================================
+2021-09-16 16:51:03 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:51:48 [32minfo[39m: initalizing keycloak
+2021-09-16 16:51:48 [32minfo[39m: =================================
+2021-09-16 16:51:48 [32minfo[39m: ======= ENV: development =======
+2021-09-16 16:51:48 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 16:51:48 [32minfo[39m: =================================
+2021-09-16 16:51:49 [32minfo[39m: DB connected
+2021-09-16 17:04:24 [32minfo[39m: initalizing keycloak
+2021-09-16 17:04:24 [32minfo[39m: =================================
+2021-09-16 17:04:24 [32minfo[39m: ======= ENV: development =======
+2021-09-16 17:04:24 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 17:04:24 [32minfo[39m: =================================
+2021-09-16 17:04:25 [32minfo[39m: DB connected
+2021-09-16 17:05:59 [32minfo[39m: initalizing keycloak
+2021-09-16 17:05:59 [32minfo[39m: =================================
+2021-09-16 17:05:59 [32minfo[39m: ======= ENV: development =======
+2021-09-16 17:05:59 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 17:05:59 [32minfo[39m: =================================
+2021-09-16 17:06:00 [32minfo[39m: DB connected
+2021-09-16 17:06:11 [32minfo[39m: initalizing keycloak
+2021-09-16 17:06:11 [32minfo[39m: =================================
+2021-09-16 17:06:11 [32minfo[39m: ======= ENV: development =======
+2021-09-16 17:06:11 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 17:06:11 [32minfo[39m: =================================
+2021-09-16 17:06:12 [32minfo[39m: DB connected
+2021-09-16 17:07:43 [32minfo[39m: initalizing keycloak
+2021-09-16 17:07:43 [32minfo[39m: =================================
+2021-09-16 17:07:43 [32minfo[39m: ======= ENV: development =======
+2021-09-16 17:07:43 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 17:07:43 [32minfo[39m: =================================
+2021-09-16 17:07:43 [32minfo[39m: DB connected
+2021-09-16 17:08:03 [32minfo[39m: initalizing keycloak
+2021-09-16 17:08:03 [32minfo[39m: =================================
+2021-09-16 17:08:03 [32minfo[39m: ======= ENV: development =======
+2021-09-16 17:08:03 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 17:08:03 [32minfo[39m: =================================
+2021-09-16 17:08:03 [32minfo[39m: DB connected
+2021-09-16 17:18:14 [32minfo[39m: initalizing keycloak
+2021-09-16 17:18:14 [32minfo[39m: =================================
+2021-09-16 17:18:14 [32minfo[39m: ======= ENV: development =======
+2021-09-16 17:18:14 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 17:18:14 [32minfo[39m: =================================
+2021-09-16 17:18:16 [32minfo[39m: DB connected
+2021-09-16 17:18:48 [32minfo[39m: initalizing keycloak
+2021-09-16 17:18:48 [32minfo[39m: =================================
+2021-09-16 17:18:48 [32minfo[39m: ======= ENV: development =======
+2021-09-16 17:18:48 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 17:18:48 [32minfo[39m: =================================
+2021-09-16 17:18:49 [32minfo[39m: DB connected
+2021-09-16 17:19:25 [32minfo[39m: initalizing keycloak
+2021-09-16 17:19:25 [32minfo[39m: =================================
+2021-09-16 17:19:25 [32minfo[39m: ======= ENV: development =======
+2021-09-16 17:19:25 [32minfo[39m: 🚀 App listening on the port 3000
+2021-09-16 17:19:25 [32minfo[39m: =================================
+2021-09-16 17:19:25 [32minfo[39m: DB connected
+2021-09-16 17:19:35 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:20:21 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:20:21 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:20:21 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:27:02 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:27:02 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:27:02 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:29:58 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:29:58 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:29:58 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:31:29 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:31:29 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:32:29 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:32:29 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:32:29 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:33:13 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:33:13 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:33:13 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:33:23 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:33:23 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:33:23 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:34:36 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:34:36 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:34:36 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:34:54 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:34:54 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:34:54 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:39:26 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:39:26 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:39:26 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:44:39 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:44:44 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:44:49 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js
+2021-09-16 17:47:35 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:48:24 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:48:46 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:48:56 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js
+2021-09-16 17:48:56 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js
+2021-09-16 17:48:56 [32minfo[39m: Model :: /home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js

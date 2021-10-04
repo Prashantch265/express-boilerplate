@@ -1,0 +1,429 @@
+2021-09-16 16:20:50 [31merror[39m: uncaughtException: processe is not defined
+ReferenceError: processe is not defined
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/config/config.js:21:11)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/keycloak.js:2:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2021-09-16 16:21:51 [31merror[39m: uncaughtException: Cannot find module '/home/prashant/Documents/node.js/node-framework/database/models'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+Error: Cannot find module '/home/prashant/Documents/node.js/node-framework/database/models'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:55:17
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:52:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2021-09-16 16:23:01 [31merror[39m: uncaughtException: Cannot find module '/home/prashant/Documents/node.js/node-framework/database/models/'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+Error: Cannot find module '/home/prashant/Documents/node.js/node-framework/database/models/'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:55:17
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:52:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2021-09-16 16:24:29 [31merror[39m: uncaughtException: next is not a function
+TypeError: next is not a function
+    at /home/prashant/Documents/node.js/node-framework/server.js:16:25
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2021-09-16 16:30:01 [31merror[39m: uncaughtException: next is not a function
+TypeError: next is not a function
+    at /home/prashant/Documents/node.js/node-framework/app.js:34:25
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2021-09-16 16:31:14 [31merror[39m: uncaughtException: SequelizeConnectionError: Access denied for user ''@'localhost'
+Error: SequelizeConnectionError: Access denied for user ''@'localhost'
+    at /home/prashant/Documents/node.js/node-framework/app.js:35:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+2021-09-16 16:32:07 [31merror[39m: SequelizeConnectionError: Access denied for user ''@'localhost'
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:126:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:41:27 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: NO)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:42:22 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:43:54 [31merror[39m: SequelizeHostNotFoundError: getaddrinfo ENOTFOUND undefined
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:120:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:44:17 [31merror[39m: SequelizeConnectionError: Access denied for user 'undefined'@'localhost'
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:126:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:44:27 [31merror[39m: SequelizeConnectionError: Access denied for user 'undefined'@'localhost'
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:126:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:44:58 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:45:48 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:46:49 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:47:13 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:50:18 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:50:46 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 16:51:03 [31merror[39m: SequelizeAccessDeniedError: Access denied for user 'prashant'@'localhost' (using password: YES)
+    at ConnectionManager.connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:118:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:318:24)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:250:32
+    at async ConnectionManager.getConnection (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:280:7)
+    at async /home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:613:26
+    at async Sequelize.authenticate (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:867:5)
+    at async Sequelize.sync (/home/prashant/Documents/node.js/node-framework/node_modules/sequelize/lib/sequelize.js:791:7)
+2021-09-16 17:05:03 [31merror[39m: uncaughtException: __dirname is not a function
+TypeError: __dirname is not a function
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:50:26)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+2021-09-16 17:17:16 [31merror[39m: uncaughtException: glob pattern string required
+TypeError: glob pattern string required
+    at new Minimatch (/home/prashant/Documents/node.js/node-framework/node_modules/minimatch/minimatch.js:116:11)
+    at setopts (/home/prashant/Documents/node.js/node-framework/node_modules/glob/common.js:112:20)
+    at new GlobSync (/home/prashant/Documents/node.js/node-framework/node_modules/glob/sync.js:38:3)
+    at Function.globSync [as sync] (/home/prashant/Documents/node.js/node-framework/node_modules/glob/sync.js:24:10)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:51:21)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+2021-09-16 17:19:36 [31merror[39m: uncaughtException: sequelize.defin is not a function
+TypeError: sequelize.defin is not a function
+    at module.exports (/home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js:2:20)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:35
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+2021-09-16 17:20:21 [31merror[39m: uncaughtException: Role.hasMany is not a function
+TypeError: Role.hasMany is not a function
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js:19:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:17
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+2021-09-16 17:27:02 [31merror[39m: uncaughtException: Role.hasMany is not a function
+TypeError: Role.hasMany is not a function
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js:19:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:17
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+2021-09-16 17:29:58 [31merror[39m: uncaughtException: Role.hasMany is not a function
+TypeError: Role.hasMany is not a function
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/database/models/internal-user/rolePrivilege.model.js:19:28)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:17
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+2021-09-16 17:31:29 [31merror[39m: uncaughtException: Role.hasMany is not a function
+TypeError: Role.hasMany is not a function
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/database/models/internal-user/role.model.js:21:6)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:17
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+2021-09-16 17:32:29 [31merror[39m: uncaughtException: require(...) is not a function
+TypeError: require(...) is not a function
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:35
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
+2021-09-16 17:33:14 [31merror[39m: uncaughtException: require(...) is not a function
+TypeError: require(...) is not a function
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:35
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
+2021-09-16 17:33:23 [31merror[39m: uncaughtException: require(...) is not a function
+TypeError: require(...) is not a function
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:35
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
+2021-09-16 17:34:36 [31merror[39m: uncaughtException: require(...) is not a function
+TypeError: require(...) is not a function
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:35
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
+2021-09-16 17:34:54 [31merror[39m: uncaughtException: require(...) is not a function
+TypeError: require(...) is not a function
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:35
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
+2021-09-16 17:39:26 [31merror[39m: uncaughtException: require(...) is not a function
+TypeError: require(...) is not a function
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:21
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelizem.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
+2021-09-16 17:43:51 error: uncaughtException: require(...) is not a function
+TypeError: require(...) is not a function
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:21
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
+2021-09-16 17:45:12 [31merror[39m: uncaughtException: require(...) is not a function
+TypeError: require(...) is not a function
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:21
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
+2021-09-16 17:47:35 [31merror[39m: uncaughtException: Cannot find module '"." + /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/app.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+Error: Cannot find module '"." + /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/app.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:3
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2021-09-16 17:48:24 [31merror[39m: uncaughtException: Cannot find module '. /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/app.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+Error: Cannot find module '. /home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/app.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:3
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2021-09-16 17:48:46 [31merror[39m: uncaughtException: Cannot find module './home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/app.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+Error: Cannot find module './home/prashant/Documents/node.js/node-framework/database/models/internal-user/privilege.model.js'
+Require stack:
+- /home/prashant/Documents/node.js/node-framework/lib/sequelize.js
+- /home/prashant/Documents/node.js/node-framework/app.js
+- /home/prashant/Documents/node.js/node-framework/server.js
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:3
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+2021-09-16 17:48:56 [31merror[39m: uncaughtException: require(...) is not a function
+TypeError: require(...) is not a function
+    at /home/prashant/Documents/node.js/node-framework/lib/sequelize.js:56:26
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/lib/sequelize.js:53:8)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1153:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:1005:19)
+    at require (node:internal/modules/cjs/helpers:94:18)
+    at Object.<anonymous> (/home/prashant/Documents/node.js/node-framework/app.js:14:19)
