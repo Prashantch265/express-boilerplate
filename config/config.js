@@ -31,4 +31,13 @@ module.exports = {
     password: process.env.POSTGRES_PASSWORD || process.env.MYSQL_PASSWORD,
     database: process.env.POSTGRES_DATABASE || process.env.MYSQL_DATABASE,
   },
+  mongo: {
+    uri:
+      process.env.MONGO ||
+      "mongodb://" +
+        (process.env.IP || "localhost") +
+        ":" +
+        (process.env.MONGO_PORT || "27017") +
+        "/mernproject",
+  },
 };

@@ -12,12 +12,13 @@ const session = require("express-session");
 const { initKeycloak } = require("./lib/keycloak");
 const errorHandler = require("./middlewares/error.middleware");
 const sequelize = require("./lib/sequelize");
+const mongoose = require("./lib/mongo");
 
 const app = new express();
 
 const memoryStore = new session.MemoryStore();
 
-const keycloak = initKeycloak(memoryStore);
+// const keycloak = initKeycloak(memoryStore);
 
 if (process.env.NODE_ENV && process.env.NODE_ENV === "development") {
   dotenv.config({ path: ".local.env" });
@@ -28,10 +29,21 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === "development") {
   app.use(cors(corsOption));
 }
 
+/**
+ * for sequelize
+ */
 sequelize
   .sync({ force: true })
   .then(() => logger.info("DB connected"))
   .catch((err) => logger.error(err.stack));
+
+
+/**
+ * for mongoose
+ */
+mongoose.connection.on("error", (err) => {
+  logger.error(err.stack);
+});
 
 app.use(hpp());
 app.use(helmet());
@@ -49,7 +61,7 @@ app.use(
   })
 );
 
-app.use(keycloak.middleware({ logout: "/logout", admin: "/" }));
+// app.use(keycloak.middleware({ logout: "/logout", admin: "/" }));
 
 app.use((req, res, next) => {
   const err = new Error();
