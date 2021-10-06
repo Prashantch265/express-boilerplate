@@ -7,7 +7,6 @@ const { corsOption } = require("./utils/cors");
 const hpp = require("hpp");
 const { stream, logger } = require("./utils/logger");
 const morgan = require("morgan");
-const dotenv = require("dotenv");
 const session = require("express-session");
 const { initKeycloak } = require("./lib/keycloak");
 const errorHandler = require("./middlewares/error.middleware");
@@ -21,7 +20,6 @@ const memoryStore = new session.MemoryStore();
 // const keycloak = initKeycloak(memoryStore);
 
 if (process.env.NODE_ENV && process.env.NODE_ENV === "development") {
-  dotenv.config({ path: ".local.env" });
   app.use(cors({ origin: "*", credentials: true })); //before routes
   app.use(morgan("dev", { stream }));
 } else {
