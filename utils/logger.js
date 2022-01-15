@@ -61,8 +61,5 @@ const logger = winston.createLogger({
   ],
 });
 
-const stream = (message) => {
-  logger.info(message.substring(0, message.lastIndexOf("\n")));
-};
 
-module.exports = { logger, stream };
+module.exports = { logger };

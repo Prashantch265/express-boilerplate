@@ -1,4 +1,5 @@
 const { SuccessResponse, ErrorResponse } = require("./response");
+const { logger } = require("./logger");
 
 const successResponse = (status, data, message, source, description) => {
   if (!data) throw new Error(`Data required to send response to client`);
@@ -47,4 +48,8 @@ const isIterable = (value) => {
   return Symbol.iterator in Object(value);
 };
 
-module.exports = { successResponse, errorResponse, isEmpty, isIterable };
+const write = (message) => {
+  logger.info(message.substring(0, message.lastIndexOf("\n")));
+};
+
+module.exports = { successResponse, errorResponse, isEmpty, isIterable, write };

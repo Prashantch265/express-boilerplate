@@ -5,13 +5,16 @@ const compression = require("compression");
 const cors = require("cors");
 const { corsOption } = require("./utils/cors");
 const hpp = require("hpp");
-const { stream, logger } = require("./utils/logger");
+const { logger } = require("./utils/logger");
 const morgan = require("morgan");
 const session = require("express-session");
 const { initKeycloak } = require("./lib/keycloak");
 const errorHandler = require("./middlewares/error.middleware");
 const sequelize = require("./lib/sequelize");
-const mongoose = require("./lib/mongo");
+// const mongoose = require("./lib/mongo");
+const { errorResponse } = require("./utils/");
+const { errorMsg } = require("./utils/messages/message.json");
+const stream = require("./utils/");
 
 const app = new express();
 
@@ -21,9 +24,9 @@ const memoryStore = new session.MemoryStore();
 
 if (process.env.NODE_ENV && process.env.NODE_ENV === "development") {
   app.use(cors({ origin: "*", credentials: true })); //before routes
-  app.use(morgan("dev", { stream }));
+  app.use(morgan("dev", { "stream": stream.write }));
 } else {
-  app.use(morgan("combined", { stream }));
+  app.use(morgan("combined", { "stream": stream.write }));
   app.use(cors(corsOption));
 }
 
@@ -35,13 +38,12 @@ sequelize
   .then(() => logger.info("DB connected"))
   .catch((err) => logger.error(err.stack));
 
-
 /**
  * for mongoose
  */
-mongoose.connection.on("error", (err) => {
-  logger.error(err.stack);
-});
+// mongoose.connection.on("error", (err) => {
+//   logger.error(err.stack);
+// });
 
 app.use(hpp());
 app.use(helmet());
@@ -59,12 +61,16 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.status(200).json({ msg: "hello" });
+});
+
 // app.use(keycloak.middleware({ logout: "/logout", admin: "/" }));
 
 app.use((req, res, next) => {
   const err = new Error();
-  err.status(404);
-  err.message("Not Found");
+  err.status = 404;
+  err.message = "Not Found";
   next(err);
 });
 
