@@ -1,19 +1,25 @@
-module.exports = async (sequelize, datatypes) => {
-  const Privilege = await sequelize.define("privileges", {
+const CommonEntity = require("../common.model");
+
+module.exports = (sequelize, dataTypes) => {
+  const obj = {
     id: {
-      type: datatypes.INTEGER,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
     privilegeName: {
       field: "privilege_name",
-      type: datatypes.STRING(20),
+      type: dataTypes.STRING(20),
       allowNull: false,
     },
     description: {
-      type: datatypes.TEXT("tiny"),
+      type: dataTypes.TEXT("tiny"),
     },
-  });
+  };
+
+  const privilege = { ...obj, ...CommonEntity };
+
+  const Privilege = sequelize.define("privileges", privilege);
 
   return Privilege;
-};
+}

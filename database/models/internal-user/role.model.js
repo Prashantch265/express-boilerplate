@@ -1,19 +1,24 @@
-module.exports = async (sequelize, datatypes) => {
-  const Role = await sequelize.define("roles", {
+const CommonEntity = require("../common.model");
+
+module.exports = (sequelize, dataTypes) => {
+  const obj = {
     id: {
-      type: datatypes.INTEGER,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
     roleName: {
       field: "role_name",
-      type: datatypes.STRING(50),
+      type: dataTypes.STRING(50),
       allowNull: false,
     },
     description: {
-      type: datatypes.TEXT("tiny"),
+      type: dataTypes.TEXT("tiny"),
     },
-  });
+  };
 
+  const role = { ...obj, ...CommonEntity }
+
+  const Role = sequelize.define("roles", role);
   return Role;
 };

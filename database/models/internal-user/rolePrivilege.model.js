@@ -1,8 +1,8 @@
-module.exports = async (sequelize, datatypes) => {
+module.exports = async (sequelize, dataTypes) => {
   const RolePrivileges = sequelize.define("role_privileges", {
     roleId: {
       field: "role_id",
-      type: datatypes.INTEGER,
+      type: dataTypes.INTEGER,
       references: {
         model: "roles", // refers to table name
         key: "id", // 'id' refers to column name in table
@@ -10,7 +10,7 @@ module.exports = async (sequelize, datatypes) => {
     },
     privilegeId: {
       field: "privilege_id",
-      type: datatypes.INTEGER,
+      type: dataTypes.INTEGER,
       references: {
         model: "privileges", // refers to table name
         key: "id", // 'id' refers to column name in table
