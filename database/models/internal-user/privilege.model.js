@@ -22,4 +22,4 @@ module.exports = (sequelize, dataTypes) => {
   const Privilege = sequelize.define("privileges", privilege);
 
   return Privilege;
-}
+};

@@ -6,7 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && cross-env NODE_ENV=production node dist/server.js",
-    "dev": "cross-env NODE_ENV=development nodemon --inspect"
+    "dev": "cross-env NODE_ENV=development nodemon --inspect",
+    "migration:generate": "npx sequelize-cli migration:generate",
+    "migration:run": "npx sequelize-cli db:migrate",
+    "migration:revert": "npx sequelize-cli db:migrate:undo",
+    "seed:generate": "npx sequelize-cli seed:generate",
+    "seed:run": "npx sequelize-cli db:seed",
+    "seed:revert": "npx sequelize-cli db:seed:undo",
+    "lint": "eslint --fix . && echo 'Lint complete.'"
   },
   "repository": {
     "type": "git",
@@ -39,13 +46,24 @@
     "keycloak-connect": "^15.0.2",
     "mongoose": "^6.0.9",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.0",
+    "node-match-path": "^0.6.3",
+    "nodemailer": "^6.8.0",
+    "nodemailer-express-handlebars": "^5.0.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.6.5",
+    "socket.io": "^4.5.3",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
   }
 }

@@ -1,0 +1,29 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true,
+        "browser": true
+    },
+    "plugins": [
+        "prettier"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "no-unused-vars": "warn",
+        "no-unused-labels": "warn",
+        "no-unused-expressions": "error",
+        "semi": "warn"
+    },
+    "settings": {
+        "eslint.validate": [
+            "javascript"
+        ]
+    }
+}

@@ -2,14 +2,14 @@ const { DataTypes } = require("sequelize");
 
 const CommonEntity = {
   isActive: {
-    field: 'is_active',
+    field: "is_active",
     type: DataTypes.BOOLEAN,
-    defaultValue: true
+    defaultValue: true,
   },
   isDeleted: {
-    field: 'is_deleted',
+    field: "is_deleted",
     type: DataTypes.BOOLEAN,
-    defaultValue: false
+    defaultValue: false,
   },
   createdBy: {
     field: "created_by",

@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
     },
   };
 
-  const role = { ...obj, ...CommonEntity }
+  const role = { ...obj, ...CommonEntity };
 
   const Role = sequelize.define("roles", role);
   return Role;

@@ -14,3 +14,7 @@ package-lock.json
 logs/
 npm-debug.log*
 
+# IDE config
+.idea
+.vscode
+

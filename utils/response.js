@@ -1,21 +1,21 @@
 class SuccessResponse {
-  sucess = true;
+  success = true;
   status;
   data = [];
   message;
   source;
-  description;
 }
 
 class ErrorResponse {
-  constructor(message, description) {
+  constructor(status, message, source) {
+    this.status = status;
     this.message = message;
-    this.description = description;
+    this.source = source;
   }
-  sucess = false;
+  success = false;
   status;
   message;
-  description;
+  source;
 }
 
 module.exports = { SuccessResponse, ErrorResponse };
