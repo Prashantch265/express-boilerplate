@@ -7,10 +7,9 @@
 !["NPM"](https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white)
 ## Description
 This boilerplate is created to kick start your node.js project based on express.js. It removes the overhead of writing the whole project from scratch. Just clone this repo and you can start writing code for solving business problems.
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
 ## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+(/assets/images/visuals1.png)
 
 ## Installation
 To start using this boilerplate
