@@ -9,7 +9,7 @@
 This boilerplate is created to kick start your node.js project based on express.js. It removes the overhead of writing the whole project from scratch. Just clone this repo and you can start writing code for solving business problems.
 
 ## Visuals
-(/assets/images/visuals1.png)
+![](/assets/images/visuals1.png)
 
 ## Installation
 To start using this boilerplate
