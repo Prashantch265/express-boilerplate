@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/Prashantch265/node-framework.git"
+    "url": "https://github.com/Prashantch265/express-boilerplate.git"
   },
   "keywords": [
     "Node.js",
@@ -27,9 +27,9 @@
   "author": "prashant",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/Prashantch265/node-framework/issues"
+    "url": "https://github.com/Prashantch265/express-boilerplate/issues"
   },
-  "homepage": "https://gitlab.com/Prashantch265/node-framework#readme",
+  "homepage": "https://github.com/Prashantch265/express-boilerplate#readme",
   "dependencies": {
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
