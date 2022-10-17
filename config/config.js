@@ -28,12 +28,12 @@ module.exports = {
     database: process.env.MYSQL_DATABASE || "testdb",
   },
   migration: {
-    dialect: process.env.DIALECT || "mysql",
     host: process.env.POSTGRES || process.env.MYSQL,
     user: process.env.POSTGRES_USER || process.env.MYSQL_USER,
     password: process.env.POSTGRES_PASSWORD || process.env.MYSQL_PASSWORD,
     database: process.env.POSTGRES_DATABASE || process.env.MYSQL_DATABASE,
   },
+  dialect: process.env.DIALECT || { postgres: "postgres", mysql: "mysql" },
   mongo: {
     uri:
       process.env.MONGO ||
@@ -41,6 +41,6 @@ module.exports = {
         (process.env.IP || "localhost") +
         ":" +
         (process.env.MONGO_PORT || "27017") +
-        "/mernproject",
+        "/hulaki",
   },
 };

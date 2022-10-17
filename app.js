@@ -57,7 +57,7 @@ db.sequelize
 /**
  * Connect to MongoDB
  */
-// require("./lib/mongo");
+require("./lib/mongo");
 
 /**
  * Initialize Socket

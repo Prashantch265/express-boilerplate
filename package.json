@@ -31,12 +31,15 @@
   },
   "homepage": "https://github.com/Prashantch265/express-boilerplate#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cls-hooked": "^4.2.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-http-context": "^1.2.4",
     "express-session": "^1.17.2",
     "glob": "^7.1.7",
     "helmet": "^4.6.0",
@@ -51,6 +54,7 @@
     "node-match-path": "^0.6.3",
     "nodemailer": "^6.8.0",
     "nodemailer-express-handlebars": "^5.0.0",
+    "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.0",
     "pg": "^8.7.1",
@@ -64,6 +68,7 @@
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.20",
     "prettier": "^2.7.1"
   }
 }

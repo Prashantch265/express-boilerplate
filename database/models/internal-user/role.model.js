@@ -1,4 +1,4 @@
-const CommonEntity = require("../common.model");
+const CommonEntity = require("../common");
 
 module.exports = (sequelize, dataTypes) => {
   const obj = {

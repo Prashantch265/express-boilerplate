@@ -1,4 +1,4 @@
-const UserService = require("../../services/user/user.service");
+const UserService = require("../../services/rsmp/user.service");
 
 const registerUser = async (req, res, next) => {
   const data = req.body;
