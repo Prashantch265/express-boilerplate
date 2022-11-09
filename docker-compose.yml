@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  express:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: express
+    container_name: express-app
+    restart: always
+    env_file:
+      - ./.env.production
+    network_mode: host
