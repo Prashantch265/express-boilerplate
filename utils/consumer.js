@@ -12,18 +12,20 @@ const receiveMessageFromQueue = async () => {
   await connection
     .createChannel()
     .then((channel) => {
-      //declare queue
+      // declare queue
       const queue = rabbitMq.queue;
 
+      // This makes sure the queue is declared before attempting to produce or consume from it
       channel.assertQueue(queue, { durable: true });
 
-      //message needs to be in buffer
+      // message needs to be in buffer
       channel.consume(
         queue,
         function (msg) {
           console.log(" [x] Received %s", msg.content.toString());
         },
         {
+          // An ack(nowledgement) is sent back by the consumer to tell RabbitMQ that a particular message has been received, processed and that RabbitMQ is free to delete it.
           noAck: true,
         }
       );

@@ -11,14 +11,15 @@ const sendMessageToQueue = async () => {
   await connection
     .createChannel()
     .then((channel) => {
-      //declare queue
+      // declare queue
       const queue = rabbitMq.queue;
 
       const testMsg = "Hello World";
 
+      // This makes sure the queue is declared before attempting to produce or consume from it
       channel.assertQueue(queue, { durable: true });
 
-      //message needs to be in buffer
+      // message needs to be in buffer
       channel.sendToQueue(queue, Buffer.from(testMsg));
       console.log("sent");
     })
