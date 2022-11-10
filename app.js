@@ -46,23 +46,28 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === "development") {
 /**
  * Connect to Database With Sequelize
  */
-db.sequelize
-  .authenticate()
-  .then(() => {
-    // db.sequelize.sync({ force: true });
-    logger.info("DB connected");
-  })
-  .catch((err) => logger.error(err.stack));
+// db.sequelize
+//   .authenticate()
+//   .then(() => {
+//     // db.sequelize.sync({ force: true });
+//     logger.info("DB connected");
+//   })
+//   .catch((err) => logger.error(err.stack));
 
 /**
  * Connect to MongoDB
  */
-require("./lib/mongo");
+// require("./lib/mongo");
 
 /**
  * Initialize Socket
  */
 require("./lib/socket-io")(app);
+
+/**
+ * Connect to RabbitMQ Server
+ */
+require("./lib/rabbitmq")();
 
 /**
  * Initialize Middlewares

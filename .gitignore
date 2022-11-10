@@ -2,7 +2,7 @@
 node_modules/
 
 # ignore package
-package-lock.json
+# package-lock.json
 
 # Optional npm cache directory
 .npm

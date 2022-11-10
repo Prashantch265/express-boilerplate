@@ -43,4 +43,8 @@ module.exports = {
         (process.env.MONGO_PORT || "27017") +
         "/hulaki",
   },
+  rabbitMq: {
+    host: `amqp://${process.env.RABBITMQ_HOST || "localhost"}`,
+    queue: process.env.QUEUE || "testqueue",
+  },
 };
