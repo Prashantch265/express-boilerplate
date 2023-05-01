@@ -17,7 +17,7 @@ To start using this boilerplate
 clone this repo
 
 ```bash
-git clone https://gitlab.com/Prashantch265/node-framework.git
+git clone https://github.com/Prashantch265/node-framework.git
 ```
 or
 
