@@ -1,0 +1,156 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API Documentation",
+    "description": "Documentation for Express Boilerplate API",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/forgot-password": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/register": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/login/internal": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/login/external": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/login/google": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/login/facebook": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/otp-config": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "post": {
+        "tags": [
+          "OTP Config"
+        ],
+        "summary": "Some summary...",
+        "description": "Some description...",
+        "parameters": [
+          {
+            "name": "parameter_name",
+            "in": "body",
+            "description": "Some description...",
+            "schema": {
+              "$ref": "#/definitions/addOtpConfigSchema"
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/otp-config/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "externalUserLoginSchema": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email"
+        }
+      },
+      "additionalProperties": false
+    },
+    "addOtpConfigSchema": {
+      "type": "object",
+      "properties": {
+        "otpLength": {
+          "type": "number",
+          "format": "float"
+        },
+        "expirationTime": {
+          "type": "string"
+        },
+        "alphabets": {
+          "type": "boolean"
+        },
+        "uppercase": {
+          "type": "boolean"
+        },
+        "specialChar": {
+          "type": "boolean"
+        },
+        "digits": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "web",
+            "mobile"
+          ]
+        }
+      },
+      "required": [
+        "otpLength",
+        "expirationTime",
+        "type"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

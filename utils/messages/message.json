@@ -8,6 +8,8 @@
     "notFound": "%s not found.",
     "duplicateData": "Duplicate %s found.",
     "tokenExpired": "Access Token has expired.",
+    "invalidToken": "Invalid Token",
+    "invalidOtp": "Invalid OTP.",
     "childExists": "%s is used in %s",
     "permanentData": "You can't delete or update this %s."
   },
@@ -17,8 +19,10 @@
     "update": "%s updated successfully",
     "delete": "%s deleted successfully",
     "remove": "%s removed successfully",
+    "register": "%s registered successfully",
     "loggedIn": "logged in successfully",
     "stored": "%s stored successfully",
-    "publish": "%s published successfully"
+    "publish": "%s published successfully",
+    "verify": "%s verified successfully"
   }
 }

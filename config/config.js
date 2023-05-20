@@ -3,35 +3,25 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === "development")
 
 module.exports = {
   port: process.env.PORT || 3000,
-  jwtSecret: process.env.JWT_SECRET,
-  keycloakConfig: {
-    clientId: process.env.KEYCLOAK_CLIENT_ID,
-    realm: process.env.KEYCLOAK_REALM,
-    serverUrl: process.env.KEYCLOAK_SERVER_URL,
-    bearerOnly: true,
-    credentials: {
-      secret: process.env.KEYCLOAK_CLIENT_SECRET,
-    },
+  jwtConfig: {
+    accessTokenExpiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN,
+    refreshTokenExpiresIn: process.env.REFRESH_TOKEN_EXPIRES_IN,
+    accessTokenSecret: process.env.ACCESS_TOKEN_SECRET,
+    refreshTokenSecret: process.env.REFRESH_TOKEN_SECRET,
   },
   postgres: {
-    host: process.env.POSTGRES,
-    user: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PASSWORD,
+    host: process.env.POSTGRES || "localhost",
+    user: process.env.POSTGRES_USER || "postgres",
+    password: process.env.POSTGRES_PASSWORD || "postgres",
     port: process.env.POSTGRES_PORT || 5432,
-    database: process.env.POSTGRES_DATABASE,
+    database: process.env.POSTGRES_DATABASE || "express-boilerplate",
   },
   mysql: {
-    host: process.env.MYSQL,
+    host: process.env.MYSQL || "localhost",
     user: process.env.MYSQL_USER || "prashant",
     password: process.env.MYSQL_PASSWORD || "9591",
     port: process.env.MYSQL_PORT || 3306,
     database: process.env.MYSQL_DATABASE || "testdb",
-  },
-  migration: {
-    host: process.env.POSTGRES || process.env.MYSQL,
-    user: process.env.POSTGRES_USER || process.env.MYSQL_USER,
-    password: process.env.POSTGRES_PASSWORD || process.env.MYSQL_PASSWORD,
-    database: process.env.POSTGRES_DATABASE || process.env.MYSQL_DATABASE,
   },
   dialect: process.env.DIALECT || { postgres: "postgres", mysql: "mysql" },
   mongo: {
@@ -46,5 +36,15 @@ module.exports = {
   rabbitMq: {
     host: `amqp://${process.env.RABBITMQ_HOST || "localhost"}`,
     queue: process.env.QUEUE || "testqueue",
+  },
+  oauth: {
+    google: {
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+    },
+    facebook: {
+      appId: process.env.APP_ID,
+      appSecret: process.env.APP_SECRET,
+    },
   },
 };

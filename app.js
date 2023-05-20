@@ -16,11 +16,20 @@ const passport = require("passport");
 const httpContext = require("express-http-context");
 const { authMiddleware } = require("./middlewares/auth.middleware");
 const { HttpException, AuthException } = require("./exceptions/index");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./doc/swagger-output.json");
+
+/**
+ * Generate Swagger Specification
+ */
+require("./lib/swagger")();
 
 /**
  * Initialize Passport
  */
-require("./lib/passport-jwt")(passport);
+// require("./passport/jwt.passport")(passport);
+// require("./passport/google.passport")(passport);
+// require("./passport/facebook.passport")(passport);
 
 /**
  * Initialize Express
@@ -46,13 +55,13 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === "development") {
 /**
  * Connect to Database With Sequelize
  */
-// db.sequelize
-//   .authenticate()
-//   .then(() => {
-//     // db.sequelize.sync({ force: true });
-//     logger.info("DB connected");
-//   })
-//   .catch((err) => logger.error(err.stack));
+db.sequelize
+  .authenticate()
+  .then(() => {
+    // db.sequelize.sync({ force: true });
+    logger.info("DB connected");
+  })
+  .catch((err) => logger.error(err.stack));
 
 /**
  * Connect to MongoDB
@@ -81,7 +90,7 @@ app.use(cookieParser());
 app.use(compression());
 app.use(httpContext.middleware);
 app.use(express.static(path.join(__dirname, "./public/frontend")));
-app.use(authMiddleware);
+// app.use(authMiddleware);
 
 app.use(
   session({
@@ -95,7 +104,12 @@ app.use(
 /**
  * Initialize Routes
  */
-require("./routes/")(app);
+require("./core/")(app);
+
+/**
+ * Swagger Setup
+ */
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get("/", (req, res) => {
   res.status(200).json({ msg: "hello" });
