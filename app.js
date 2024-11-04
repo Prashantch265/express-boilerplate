@@ -79,7 +79,7 @@ db.sequelize
 /**
  * Initialize RabbitMQ for message queuing
  */
-// require("./lib/rabbitmq")();
+require("./lib/rabbitmq");
 
 /**
  * Express App Setup: Middleware
