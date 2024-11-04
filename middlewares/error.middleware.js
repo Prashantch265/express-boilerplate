@@ -1,5 +1,5 @@
 const { errorResponse, formattedMsg } = require("../utils");
-const { logger } = require("../utils/logger");
+const { logger } = require("../utils");
 const { HttpException, AuthException } = require("../exceptions/index");
 
 const errorHandler = (err, req, res, next) => {

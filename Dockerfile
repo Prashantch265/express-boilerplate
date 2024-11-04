@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json /tmp/
 
 # Install dependencies
-RUN cd /tmp && npm install --legacy-peer-deps
+RUN cd /tmp && npm install
 
 # Move installed node modules to app
 RUN cp -a /tmp/node_modules /app
@@ -15,10 +15,4 @@ RUN cp -a /tmp/node_modules /app
 # Bundle app source
 COPY . /app
 
-EXPOSE 3001
-
-ENV NODE_ENV production
-
-CMD ["npm", "run", "build:prod"]
-
-CMD ["npm", "run", "start"]
+EXPOSE 3000

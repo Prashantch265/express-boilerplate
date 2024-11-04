@@ -18,139 +18,42 @@
     "application/json"
   ],
   "paths": {
-    "/forgot-password": {
-      "post": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/register": {
-      "post": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/login/internal": {
-      "post": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/login/external": {
-      "post": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/login/google": {
+    "/app": {
       "get": {
         "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/login/facebook": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/otp-config": {
-      "get": {
-        "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "type": "string"
+          }
+        ],
         "responses": {}
       },
       "post": {
-        "tags": [
-          "OTP Config"
-        ],
-        "summary": "Some summary...",
-        "description": "Some description...",
-        "parameters": [
-          {
-            "name": "parameter_name",
-            "in": "body",
-            "description": "Some description...",
-            "schema": {
-              "$ref": "#/definitions/addOtpConfigSchema"
-            }
-          }
-        ],
+        "description": "",
+        "parameters": [],
         "responses": {
           "422": {
             "description": "Unprocessable Entity"
           }
         }
       }
-    },
-    "/otp-config/{id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {}
-      }
-    }
-  },
-  "definitions": {
-    "externalUserLoginSchema": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "type": "string",
-          "format": "email"
-        }
-      },
-      "additionalProperties": false
-    },
-    "addOtpConfigSchema": {
-      "type": "object",
-      "properties": {
-        "otpLength": {
-          "type": "number",
-          "format": "float"
-        },
-        "expirationTime": {
-          "type": "string"
-        },
-        "alphabets": {
-          "type": "boolean"
-        },
-        "uppercase": {
-          "type": "boolean"
-        },
-        "specialChar": {
-          "type": "boolean"
-        },
-        "digits": {
-          "type": "boolean"
-        },
-        "type": {
-          "type": "string",
-          "enum": [
-            "web",
-            "mobile"
-          ]
-        }
-      },
-      "required": [
-        "otpLength",
-        "expirationTime",
-        "type"
-      ],
-      "additionalProperties": false
     }
   }
 }

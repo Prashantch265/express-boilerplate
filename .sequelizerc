@@ -1,7 +1,17 @@
 module.exports = {
+  // Path to the configuration file for database migration settings
   'config': `${__dirname}/config/migration.js`,
-  'models-path': `${__dirname}/core/**/*.model.js`,
+
+  // Path to the folder where all the Sequelize models are stored
+  // This uses a wildcard to load all models within the `core` directory that follow the `.model.js` pattern
+  'models-path': `${__dirname}/app/**/*.model.js`,
+
+  // Path to the folder containing all seeders (files for seeding data into the database)
   'seeders-path': `${__dirname}/database/seeders`,
+
+  // Path to the folder containing migration files (for schema changes in the database)
   'migrations-path': `${__dirname}/database/migrations`,
+
+  // Enable Sequelize's debug mode to get detailed logs for troubleshooting
   'debug': true
 };
