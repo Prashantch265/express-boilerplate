@@ -1,4 +1,4 @@
-const db = require("../lib/sequelize");
+const db = require("@lib/sequelize");
 const { app_configs } = db;
 
 /**

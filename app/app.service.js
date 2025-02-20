@@ -1,6 +1,6 @@
 const AppRepository = require("./app.repository");
-const { HttpException } = require("../exceptions/index");
-const { getPaginationParams, formatPaginatedResponse } = require("../utils");
+const { HttpException } = require("@exceptions");
+const { getPaginationParams, formatPaginatedResponse } = require("@utils");
 
 /**
  * Add a new App Config.

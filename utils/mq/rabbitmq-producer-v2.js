@@ -1,6 +1,6 @@
 const messageQueue = require("../../lib/rabbitmq");
 const { logger } = require("../logging/logger");
-const { rabbitMq } = require("../../config/config");
+const { rabbitMq } = require("../../configs/config");
 
 /**
  * Sleeps for a given duration to create a delay.

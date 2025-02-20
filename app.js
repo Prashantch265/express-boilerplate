@@ -15,7 +15,7 @@ const passport = require("passport");
 const httpContext = require("express-http-context");
 const { authMiddleware } = require("./middlewares/auth.middleware");
 const { HttpException, AuthException } = require("./exceptions/index");
-const { sessionConfig } = require("./config/config");
+const { sessionConfig } = require("./configs/config");
 
 /**
  * Initialize Passport Strategies
@@ -59,7 +59,7 @@ db.sequelize
   .authenticate()
   .then(() => {
     // Optionally force-sync DB schema for development
-    // db.sequelize.sync({ force: true });
+    // db.sequelize.sync({ alter: true });
     logger.info("DB connected");
   })
   .catch((err) => logger.error(err.stack));
@@ -79,11 +79,12 @@ db.sequelize
 /**
  * Initialize RabbitMQ for message queuing
  */
-require("./lib/rabbitmq");
+// require("./lib/rabbitmq");
 
 /**
  * Express App Setup: Middleware
  */
+app.set("trust proxy", true); // Trusting the Proxy (Cloudflare or Load Balancer)
 app.set("view engine", "ejs"); // EJS as templating engine for rendering views
 app.use(hpp()); // Prevent HTTP parameter pollution attacks
 app.use(helmet()); // Add security-related HTTP headers

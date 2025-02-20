@@ -1,49 +1,46 @@
 const FacebookStrategy = require("passport-facebook").Strategy;
-const userCtrl = require("../controller/user.controller");
-const authCtrl = require("../controller/auth.controller");
-require("dotenv").config();
+const { controllers } = require("../app/users");
+const { serializeUser, deserializeUser } = require("./passport-utils");
+const { facebook } = require("../configs/oauth-config");
+const { logger } = require("../utils");
 
+/**
+ * Configures the Facebook Passport strategy.
+ * @param {Object} passport - The Passport instance.
+ */
 module.exports = (passport) => {
-  passport.serializeUser((user, done) => {
-    done(null, user.uid);
-  });
+  // Apply modular serialization and deserialization
+  serializeUser(passport);
+  deserializeUser(passport);
 
-  passport.deserializeUser((uid, done) => {
-    authCtrl.findByUid(uid).then((user) => {
-      done(null, user);
-    });
-  });
+  const userController = controllers.normalUserController;
 
-  const strategy = () =>
-    passport.use(
-      new FacebookStrategy(
-        {
-          clientID: process.env.APP_ID,
-          clientSecret: process.env.APP_SECRET,
-          callbackURL: "http://localhost:3000/auth/facebook/cb",
-          profileFields: ["id", "displayName", "photos", "email"],
-        },
-        (acesstoken, refreshtoken, profile, done) => {
-          // passport callback function
-          console.log(profile);
-          try {
-            userCtrl.find(profile).then((user) => {
-              if (!user) {
-                userCtrl.create(profile).then((newUser) => {
-                  console.log(newUser);
-                  done(null, newUser);
-                });
-              } else {
-                console.log(user);
-                done(null, user);
-              }
-            });
-          } catch (err) {
-            console.log(err);
+  passport.use(
+    new FacebookStrategy(
+      {
+        clientID: facebook.clientID,
+        clientSecret: facebook.clientSecret,
+        callbackURL: facebook.callbackURL,
+        profileFields: facebook.profileFields,
+      },
+      async (accessToken, refreshToken, profile, done) => {
+        try {
+          logger.info(`Facebook profile retrieved: ${profile.id}`);
+          let user = await userController.find(profile);
+          if (!user) {
+            logger.info(
+              `Creating new user for Facebook profile ID: ${profile.id}`
+            );
+            user = await userController.create(profile);
           }
+          done(null, user);
+        } catch (error) {
+          logger.error(
+            `Error handling Facebook profile ID: ${profile.id} - ${error.message}`
+          );
+          done(error, null);
         }
-      )
-    );
-
-  strategy.__oauth2.setAgent(require("https-proxy-agent"));
+      }
+    )
+  );
 };

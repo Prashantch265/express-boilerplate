@@ -40,7 +40,7 @@ const successResponse = (res, result, message, source) => {
 
   const success = new SuccessResponse();
   success.source = source;
-  success.message = util.format(successMsg[message], source);
+  success.message = util.format(successMsg[message] ?? message, source);
   success.status = 200;
 
   // Check if result includes pagination details

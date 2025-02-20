@@ -1,4 +1,4 @@
-const { successResponse } = require("../utils");
+const { successResponse } = require("@utils");
 const AppService = require("./app.service");
 
 const addAppConfig = async (req, res, next) => {
@@ -15,7 +15,7 @@ const getAllAppConfigs = async (req, res, next) => {
   try {
     const { page, size, sort, sortBy } = req.query;
     const result = await AppService.getAllAppConfigs(page, size, sort, sortBy);
-    return successResponse(res, result, "fetchSuccess", "app-config");
+    return successResponse(res, result, "fetch", "app-config");
   } catch (error) {
     next(error);
   }

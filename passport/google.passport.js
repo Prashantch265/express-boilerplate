@@ -1,42 +1,43 @@
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const userCtrl = require("../controller/user.controller");
-const authCtrl = require("../controller/auth.controller");
+const { controllers } = require("../app/users");
+const { serializeUser, deserializeUser } = require("./passport-utils");
+const { oauth } = require("../configs/config");
+const { logger } = require("../utils");
 
+/**
+ * Configures the Google Passport strategy.
+ * @param {Object} passport - The Passport instance.
+ */
 module.exports = (passport) => {
-  passport.serializeUser((user, done) => {
-    done(null, user.uid);
-  });
+  // Apply modular serialization and deserialization
+  serializeUser(passport);
+  deserializeUser(passport);
 
-  passport.deserializeUser((uid, done) => {
-    authCtrl.findByUid(uid).then((user) => {
-      done(null, user);
-    });
-  });
+  const userController = controllers.normalUserController;
 
   passport.use(
     new GoogleStrategy(
       {
-        clientID: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        callbackURL: "/auth/google/cb",
+        clientID: oauth.google.clientID,
+        clientSecret: oauth.google.clientSecret,
+        callbackURL: oauth.google.callbackURL,
       },
-      (acesstoken, refreshtoken, profile, done) => {
-        // passport callback function
-        console.log(profile);
+      async (accessToken, refreshToken, profile, done) => {
         try {
-          userCtrl.find(profile).then((user) => {
-            if (!user) {
-              userCtrl.create(profile).then((newUser) => {
-                console.log(newUser);
-                done(null, newUser);
-              });
-            } else {
-              console.log(user);
-              done(null, user);
-            }
-          });
-        } catch (err) {
-          console.log(err);
+          logger.info(`Google profile retrieved: ${profile.id}`);
+          let user = await userController.find(profile);
+          if (!user) {
+            logger.info(
+              `Creating new user for Google profile ID: ${profile.id}`
+            );
+            user = await userController.create(profile);
+          }
+          done(null, user);
+        } catch (error) {
+          logger.error(
+            `Error handling Google profile ID: ${profile.id} - ${error.message}`
+          );
+          done(error, null);
         }
       }
     )

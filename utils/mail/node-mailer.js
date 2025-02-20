@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 const hbs = require("nodemailer-express-handlebars");
 const ejs = require("ejs");
-const { mailerConfig } = require("../../config/config");
+const { mailerConfig } = require("../../configs/config");
 const { logger } = require("../logging/logger");
 const path = require("path");
 

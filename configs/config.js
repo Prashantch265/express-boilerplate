@@ -64,13 +64,18 @@ module.exports = {
    * Stores API keys for OAuth providers.
    */
   oauth: {
-    google: {
-      clientId: process.env.CLIENT_ID, // Google Client ID for OAuth
-      clientSecret: process.env.CLIENT_SECRET, // Google Client Secret for OAuth
-    },
     facebook: {
-      appId: process.env.APP_ID, // Facebook App ID for OAuth
-      appSecret: process.env.APP_SECRET, // Facebook App Secret for OAuth
+      clientID: process.env.FACEBOOK_APP_ID, // Facebook App ID for OAuth
+      clientSecret: process.env.FACEBOOK_APP_SECRET, // Facebook App Secret for OAuth
+      callbackURL:
+        process.env.FACEBOOK_CALLBACK_URL ||
+        "http://localhost:3000/auth/facebook/cb",
+      profileFields: ["id", "displayName", "photos", "email"],
+    },
+    google: {
+      clientID: process.env.GOOGLE_CLIENT_ID, // Google Client ID for OAuth
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET, // Google Client Secret for OAuth
+      callbackURL: process.env.GOOGLE_CALLBACK_URL || "/auth/google/cb",
     },
   },
 

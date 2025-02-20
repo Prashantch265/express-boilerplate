@@ -1,6 +1,6 @@
 const messageQueue = require("../../lib/rabbitmq");
 const { logger } = require("../logging/logger");
-const { rabbitMq } = require("../../config/config");
+const { rabbitMq } = require("../../configs/config");
 
 const receiveMessageFromQueue = async () => {
   const connection = await messageQueue();

@@ -11,6 +11,6 @@ const unprotectedRoutes = [
   "/internal/signin",
 ];
 
-const allowedExtension = [];
+const allowedExtensions = [];
 
-module.exports = { allowedOrigins, unprotectedRoutes, allowedExtension };
+module.exports = { allowedOrigins, unprotectedRoutes, allowedExtensions };

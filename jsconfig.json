@@ -1,0 +1,18 @@
+{
+ "compilerOptions": {
+    "module": "CommonJS",
+    "removeComments": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "paths": {
+        "@app/*": ["app/*"],
+        "@configs/*": ["configs/*"],
+        "@database/*": ["database/*"],
+        "@exceptions/*": ["exceptions/*"],
+        "@lib/*": ["lib/*"],
+        "@middlewares/*": ["middlewares/*"],
+        "@passport/*": ["passport/*"],
+        "@utils/*": ["utils/*"]
+    }
+ }
+}

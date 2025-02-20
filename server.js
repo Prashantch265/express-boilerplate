@@ -1,8 +1,10 @@
+require("module-alias/register");
+
 // Import the Express app instance from the app.js file
 const app = require("./app");
 
 // Import the port configuration from the config file
-const { port } = require("./config/config");
+const { port } = require("./configs/config");
 
 // Import the custom logger utility for structured logging
 const { logger } = require("./utils");

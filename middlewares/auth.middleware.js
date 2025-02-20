@@ -1,6 +1,6 @@
 const httpContext = require("express-http-context");
 const passport = require("passport");
-const { unprotectedRoutes } = require("../config/protect");
+const { unprotectedRoutes } = require("../configs/protect");
 const { match } = require("node-match-path");
 
 const authMiddleware = (req, res, next) => {
@@ -16,10 +16,11 @@ const authMiddleware = (req, res, next) => {
       next();
     } else {
       passport.authenticate("jwt", { session: false })(req, res, async () => {
-        const userInfo = (({ userId, userName, name, role }) => ({
+        const userInfo = (({ userId, userType, email, fullName, role }) => ({
           userId,
-          userName,
-          name,
+          userType,
+          email,
+          fullName,
           role,
         }))(req.user[0]);
         httpContext.set("user", userInfo);
