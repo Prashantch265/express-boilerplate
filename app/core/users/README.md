@@ -68,8 +68,6 @@ Below is the Entity-Relationship Diagram (ERD) for the User Management System:
 
 ![ERD Placeholder](/assets/images/users_erd.png)
 
-*(Replace the `#` in the image tag with the actual path to your ERD image.)*
-
 ---
 
 ## **Functionality**
