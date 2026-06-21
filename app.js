@@ -29,10 +29,22 @@ const app = new express();
 
 const memoryStore = new session.MemoryStore();
 
+const devOrigins = [
+  "http://127.0.0.1",
+  "http://localhost",
+  "http://localhost:3000",
+  "http://localhost:5000",
+];
+
+// Allow CORS_ORIGIN env var to override allowed origins for any environment
+const corsOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",")
+  : undefined;
+
 if (process.env.NODE_ENV && process.env.NODE_ENV === "development") {
   app.use(
     cors({
-      origin: "*",
+      origin: corsOrigins || devOrigins,
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     })
