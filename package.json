@@ -4,7 +4,7 @@
   "description": "This is a project created as a solution for express app.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js",
     "dev": "cross-env NODE_ENV=development nodemon --ignore swagger-output.json --inspect",
     "migration:generate": "npx sequelize-cli migration:generate --name",
@@ -77,9 +77,11 @@
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^30.4.2",
     "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
-    "sequelize-cli": "^6.6.0"
+    "sequelize-cli": "^6.6.0",
+    "supertest": "^7.2.2"
   },
   "_moduleAliases": {
     "@app": "./app",
@@ -90,5 +92,26 @@
     "@middlewares": "./middlewares",
     "@passport": "./passport",
     "@utils": "./utils"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@app$": "<rootDir>/app",
+      "^@app/(.*)$": "<rootDir>/app/$1",
+      "^@configs$": "<rootDir>/configs",
+      "^@configs/(.*)$": "<rootDir>/configs/$1",
+      "^@database$": "<rootDir>/database",
+      "^@database/(.*)$": "<rootDir>/database/$1",
+      "^@exceptions$": "<rootDir>/exceptions",
+      "^@exceptions/(.*)$": "<rootDir>/exceptions/$1",
+      "^@lib$": "<rootDir>/lib",
+      "^@lib/(.*)$": "<rootDir>/lib/$1",
+      "^@middlewares$": "<rootDir>/middlewares",
+      "^@middlewares/(.*)$": "<rootDir>/middlewares/$1",
+      "^@passport$": "<rootDir>/passport",
+      "^@passport/(.*)$": "<rootDir>/passport/$1",
+      "^@utils$": "<rootDir>/utils",
+      "^@utils/(.*)$": "<rootDir>/utils/$1"
+    }
   }
 }
