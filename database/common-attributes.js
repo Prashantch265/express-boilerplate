@@ -1,29 +1,30 @@
 const { Sequelize } = require("sequelize");
 
+// NOTE: these keys become actual column names when spread into
+// queryInterface.createTable(...) in migrations (unlike the model-side
+// app/common/common.entity.js, where `field:` remaps a camelCase attribute
+// name to its snake_case column). Keys here must already be snake_case to
+// match the models' `underscored: true` mapping. See issue #14 for
+// consolidating this with app/common/common.entity.js.
 const CommonEntity = {
-  isActive: {
-    field: "is_active",
+  is_active: {
     type: Sequelize.BOOLEAN,
     defaultValue: true,
   },
-  createdAt: {
-    field: "created_at",
+  created_at: {
     type: Sequelize.DATE,
     allowNull: false,
     defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
   },
-  updatedAt: {
-    field: "updated_at",
+  updated_at: {
     type: Sequelize.DATE,
     allowNull: false,
     defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
   },
-  createdBy: {
-    field: "created_by",
+  created_by: {
     type: Sequelize.UUID,
   },
-  updatedBy: {
-    field: "updated_by",
+  updated_by: {
     type: Sequelize.UUID,
   },
 };
