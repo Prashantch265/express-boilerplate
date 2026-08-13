@@ -10,7 +10,7 @@ const { getPaginationParams, formatPaginatedResponse } = require("@utils");
  */
 const addAppConfig = async (payload) => {
   const existingConfig = await AppRepository.findOneByField({
-    type: payload.type,
+    name: payload.name,
   });
   if (existingConfig)
     throw new HttpException(400, "duplicateData", "app-config");
