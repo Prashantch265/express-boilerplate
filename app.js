@@ -16,6 +16,7 @@ const httpContext = require("express-http-context");
 const { authMiddleware } = require("./middlewares/auth.middleware");
 const { HttpException, AuthException } = require("./exceptions/index");
 const { sessionConfig } = require("./configs/config");
+const { allowedOrigins } = require("./configs/protect");
 
 /**
  * Initialize Passport Strategies
@@ -36,20 +37,40 @@ const app = new express();
 const memoryStore = new session.MemoryStore();
 
 /**
+ * CORS: only allow the whitelist from configs/protect.js (extendable via
+ * the CORS_ORIGIN env var), in every environment - not just origin: "*"
+ * in dev, which could otherwise be accidentally carried into production.
+ */
+const corsOptions = {
+  origin: (origin, callback) => {
+    // No Origin header (curl, server-to-server, same-origin) - allow.
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    logger.warn(`Blocked CORS request from disallowed origin: ${origin}`);
+    const corsError = new Error("Not allowed by CORS");
+    corsError.status = 403;
+    return callback(corsError);
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+};
+
+if (process.env.CORS_ORIGIN === "*" && process.env.NODE_ENV !== "development") {
+  logger.warn(
+    'CORS_ORIGIN is set to "*" in a non-development environment - this allows any origin and is insecure.'
+  );
+}
+
+/**
  * Middleware for Different Environments
  */
 if (process.env.NODE_ENV === "development") {
-  app.use(
-    cors({
-      origin: "*", // Allow all origins during development
-      credentials: true,
-      methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    })
-  );
+  app.use(cors(corsOptions));
   app.use(morgan("dev", { stream: stream })); // Dev logging format
 } else {
   app.use(morgan("combined", { stream: stream })); // More detailed logging for production
-  app.use(cors({})); // Use CORS options defined in utils for production
+  app.use(cors(corsOptions));
 }
 
 /**
