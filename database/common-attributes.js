@@ -1,31 +1,16 @@
-const { Sequelize } = require("sequelize");
+const CommonEntity = require("../app/common/common.entity");
 
-const CommonEntity = {
-  isActive: {
-    field: "is_active",
-    type: Sequelize.BOOLEAN,
-    defaultValue: true,
-  },
-  createdAt: {
-    field: "created_at",
-    type: Sequelize.DATE,
-    allowNull: false,
-    defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-  },
-  updatedAt: {
-    field: "updated_at",
-    type: Sequelize.DATE,
-    allowNull: false,
-    defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-  },
-  createdBy: {
-    field: "created_by",
-    type: Sequelize.UUID,
-  },
-  updatedBy: {
-    field: "updated_by",
-    type: Sequelize.UUID,
-  },
-};
+// Migrations need the *column* name as the key - queryInterface.createTable
+// uses each key literally as the column - whereas the model-side
+// definition (app/common/common.entity.js) keys by the camelCase
+// attribute name and remaps to its column via `field:`. Derive the
+// migration-side shape from that single source instead of maintaining a
+// second, independent copy of these columns that could drift out of sync.
+const migrationCommonEntity = Object.fromEntries(
+  Object.values(CommonEntity).map(({ field, ...columnDef }) => [
+    field,
+    columnDef,
+  ])
+);
 
-module.exports = CommonEntity;
+module.exports = migrationCommonEntity;

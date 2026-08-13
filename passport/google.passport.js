@@ -1,6 +1,6 @@
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const { controllers } = require("../app/users");
-const { serializeUser, deserializeUser } = require("./passport-utils");
+const { controllers } = require("../app/core/users");
+const { serializeUser, deserializeUser } = require("./utils.passport");
 const { oauth } = require("../configs/config");
 const { logger } = require("../utils");
 

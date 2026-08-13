@@ -36,13 +36,12 @@ const updateAdmin = async (admin, userId) => {
   const existingAdmin = await findOneAdmin({ where: { userId: userId } });
   if (!existingAdmin) throw new NotFoundException("User not found");
 
-  const updatedAdmin = { ...existingAdmin, ...admin };
-
-  const update = await admins.save(updatedAdmin, {
+  await admins.update(admin, {
+    where: { userId: userId },
     userId: httpContext.get("user")?.userId,
   });
 
-  return update;
+  return await findOneAdmin({ where: { userId: userId } });
 };
 
 const getAllAdmins = async (limit, offset, sortOrder, sortBy) => {
@@ -73,12 +72,13 @@ const getAdminByUserId = async (userId) => {
 };
 
 const hardDeleteAdmin = async (userId) => {
-  const superAdmin = await findOneAdmin({
+  const admin = await findOneAdmin({
     attributes: ["superAdmin"],
     where: { userId: userId },
   });
 
-  if (superAdmin) throw new ForbiddenException("Superadmin can't be deleted");
+  if (admin?.superAdmin)
+    throw new ForbiddenException("Superadmin can't be deleted");
 
   return Promise.all([
     UsersRepository.hardDeleteUser(userId),
@@ -89,6 +89,7 @@ const hardDeleteAdmin = async (userId) => {
 };
 
 module.exports = {
+  findOneAdmin,
   createAdmin,
   updateAdmin,
   getAllAdmins,

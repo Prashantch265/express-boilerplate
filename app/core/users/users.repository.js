@@ -15,10 +15,8 @@ const updateUser = async (userId, userType) => {
   await users.update(
     { userType: userType }, // Data to update
     {
-      where: { id: 1 },
-      userId: {
-        userId: httpContext.get("user")?.userId,
-      },
+      where: { userId: userId },
+      userId: httpContext.get("user")?.userId,
     } // Condition & Options
   );
 };

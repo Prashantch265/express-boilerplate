@@ -1,13 +1,39 @@
 // Load environment variables from the corresponding .env file
 // If NODE_ENV is not defined, it will load from the default ".env" file
-require("dotenv").config({ path: `.env.${process.env.NODE_ENV || ".env"}` });
+require("dotenv").config({
+  path: `.env${process.env.NODE_ENV ? "." + process.env.NODE_ENV : ""}`,
+});
+
+/**
+ * Required sensitive environment variables.
+ * Fail fast at boot rather than silently falling back to a hardcoded
+ * default (or connecting/signing with `undefined`) if one is missing.
+ * See .env.example.
+ */
+const requiredEnvVars = [
+  "POSTGRES_USER",
+  "POSTGRES_PASSWORD",
+  "POSTGRES_DATABASE",
+  "SESSION_SECRET",
+  "ACCESS_TOKEN_SECRET",
+  "REFRESH_TOKEN_SECRET",
+];
+
+const missingEnvVars = requiredEnvVars.filter((key) => !process.env[key]);
+if (missingEnvVars.length) {
+  throw new Error(
+    `Missing required environment variable(s): ${missingEnvVars.join(
+      ", "
+    )}. See .env.example.`
+  );
+}
 
 module.exports = {
   /**
    * Database Dialect Configuration
    * Chooses between supported databases (PostgreSQL, MySQL, etc.)
    */
-  dialect: process.env.DIALECT || { postgres: "postgres", mysql: "mysql" }, // Default dialects for both Postgres and MySQL
+  dialect: process.env.DIALECT || "postgres", // Dialect Sequelize should connect with
 
   /**
    * JWT Token Configuration
@@ -53,10 +79,10 @@ module.exports = {
    */
   mysql: {
     host: process.env.MYSQL || "localhost", // MySQL Host
-    user: process.env.MYSQL_USER || "prashant", // MySQL User
-    password: process.env.MYSQL_PASSWORD || "9591", // MySQL Password
+    user: process.env.MYSQL_USER, // MySQL User (only used when DIALECT=mysql)
+    password: process.env.MYSQL_PASSWORD, // MySQL Password (only used when DIALECT=mysql)
     port: process.env.MYSQL_PORT || 3306, // MySQL Port
-    database: process.env.MYSQL_DATABASE || "testdb", // MySQL Database Name
+    database: process.env.MYSQL_DATABASE || "express-boilerplate", // MySQL Database Name
   },
 
   /**
@@ -90,10 +116,10 @@ module.exports = {
    */
   postgres: {
     host: process.env.POSTGRES || "localhost", // PostgreSQL Host
-    user: process.env.POSTGRES_USER || "postgres", // PostgreSQL User
-    password: process.env.POSTGRES_PASSWORD || "postgres", // PostgreSQL Password
+    user: process.env.POSTGRES_USER, // PostgreSQL User (required, see requiredEnvVars above)
+    password: process.env.POSTGRES_PASSWORD, // PostgreSQL Password (required, see requiredEnvVars above)
     port: process.env.POSTGRES_PORT || 5432, // PostgreSQL Port
-    database: process.env.POSTGRES_DATABASE || "express-boilerplate", // PostgreSQL Database Name
+    database: process.env.POSTGRES_DATABASE, // PostgreSQL Database Name (required, see requiredEnvVars above)
   },
 
   /**
@@ -120,6 +146,6 @@ module.exports = {
    * Session Configuration
    */
   sessionConfig: {
-    secret: process.env.SESSION_SECRET || "secret", // Default secret key for sessions
+    secret: process.env.SESSION_SECRET, // Session secret (required, see requiredEnvVars above)
   },
 };

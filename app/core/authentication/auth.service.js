@@ -1,9 +1,8 @@
 const { services } = require("@app/core/users");
 const { HttpException } = require("@exceptions");
 
-let userService;
-
 const validateEmailAndPassword = async (userType, email, password) => {
+  let userService;
   switch (userType) {
     case "admin":
       userService = services.adminUserService;
@@ -17,6 +16,12 @@ const validateEmailAndPassword = async (userType, email, password) => {
     default:
       throw new HttpException(422, "Invalid User Type");
   }
+
+  const profile = await userService.validateCredentials(email, password);
+  const plainProfile =
+    typeof profile.toJSON === "function" ? profile.toJSON() : profile;
+
+  return { ...plainProfile, userType };
 };
 
 module.exports = { validateEmailAndPassword };

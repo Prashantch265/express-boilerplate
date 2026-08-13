@@ -43,7 +43,7 @@ const getAllAdmins = async (req, res, next) => {
 const getAdminById = async (req, res, next) => {
   try {
     const userId = req.params.userId; // Assuming userId is passed as a route parameter
-    const admin = await AdminService.getAdminDetailsByUserId(userId);
+    const admin = await AdminService.getUserByUserId(userId);
     return successResponse(res, admin, "fetch", "admin");
   } catch (error) {
     next(error);
