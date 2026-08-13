@@ -5,7 +5,7 @@ const { HttpException, AuthException } = require("../exceptions/index");
 const errorHandler = (err, req, res, next) => {
   try {
     let errorObj;
-    const { errorMsg } = require("./utils/messages/message.json");
+    const { errorMsg } = require("../utils/messages/message.json");
     const status = err.status || 500;
     const message = err.message || "something went wrong";
     if (err instanceof HttpException) {

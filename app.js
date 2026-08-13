@@ -8,13 +8,12 @@ const { logger } = require("./utils");
 const morgan = require("morgan");
 const session = require("express-session");
 const db = require("./lib/sequelize");
-const { errorResponse } = require("./utils/");
 const path = require("path");
-const { stream, formattedMsg } = require("./utils/");
+const { write } = require("./utils/");
 const passport = require("passport");
 const httpContext = require("express-http-context");
 const { authMiddleware } = require("./middlewares/auth.middleware");
-const { HttpException, AuthException } = require("./exceptions/index");
+const errorHandler = require("./middlewares/error.middleware");
 const { sessionConfig } = require("./configs/config");
 
 /**
@@ -46,9 +45,9 @@ if (process.env.NODE_ENV === "development") {
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     })
   );
-  app.use(morgan("dev", { stream: stream })); // Dev logging format
+  app.use(morgan("dev", { stream: { write } })); // Dev logging format
 } else {
-  app.use(morgan("combined", { stream: stream })); // More detailed logging for production
+  app.use(morgan("combined", { stream: { write } })); // More detailed logging for production
   app.use(cors({})); // Use CORS options defined in utils for production
 }
 
@@ -137,42 +136,6 @@ app.use((req, res, next) => {
  * Global Error Handling Middleware
  * Handles all errors thrown in the app.
  */
-app.use((err, req, res, next) => {
-  try {
-    let errorObj;
-    const { errorMsg } = require("./utils/messages/message.json");
-    const status = err.status || 500;
-    const message = err.message || "Something went wrong";
-
-    // Custom error handling based on the exception type
-    if (err instanceof HttpException) {
-      errorObj = errorResponse(
-        status,
-        err?.message ? formattedMsg(err, errorMsg) : errorMsg["invalidBody"],
-        err.source
-      );
-    } else if (err instanceof AuthException) {
-      errorObj = errorResponse(
-        status,
-        err?.message,
-        status !== 403 ? null : `[${req.method}] ${req.path}`
-      );
-    } else {
-      // Generic error logging
-      logger.error(
-        `[${req.method}] ${req.path} >> StatusCode : ${status}, Message : ${message} "\n" Stack : ${err.stack}`
-      );
-      errorObj = errorResponse(
-        status,
-        formattedMsg(err, errorMsg) || message,
-        `[${req.method}] ${req.path}`
-      );
-    }
-
-    return res.status(errorObj.status).json(errorObj); // Send the error response as JSON
-  } catch (error) {
-    next(error); // In case of error in the error handler itself, call next middleware
-  }
-});
+app.use(errorHandler);
 
 module.exports = app;
