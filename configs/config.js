@@ -1,6 +1,8 @@
 // Load environment variables from the corresponding .env file
 // If NODE_ENV is not defined, it will load from the default ".env" file
-require("dotenv").config({ path: `.env.${process.env.NODE_ENV || ".env"}` });
+require("dotenv").config({
+  path: `.env${process.env.NODE_ENV ? "." + process.env.NODE_ENV : ""}`,
+});
 
 module.exports = {
   /**
