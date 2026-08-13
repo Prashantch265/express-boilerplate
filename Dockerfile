@@ -1,4 +1,4 @@
-FROM node:16.5.0
+FROM node:22-alpine
 
 # Create directory named app to hold the application code inside the image
 WORKDIR /app
@@ -16,3 +16,5 @@ RUN cp -a /tmp/node_modules /app
 COPY . /app
 
 EXPOSE 3000
+
+CMD ["npm", "run", "start"]
