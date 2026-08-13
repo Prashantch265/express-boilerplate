@@ -30,10 +30,21 @@ const { sessionConfig } = require("./configs/config");
 const app = new express();
 
 /**
- * Initialize in-memory session store
- * This could be replaced by a more scalable option (like Redis) in production.
+ * Session store: MemoryStore by default (no external dependency - not
+ * every project needs Redis just to boot). Set SESSION_STORE=redis to
+ * opt into a Redis-backed store instead (survives restarts, works
+ * across multiple processes/instances - recommended once you're
+ * already running Redis and care about that). Only requires the Redis
+ * client when explicitly opted into, so the default path never tries
+ * to connect to Redis at all.
  */
-const memoryStore = new session.MemoryStore();
+let sessionStore = new session.MemoryStore();
+
+if ((process.env.SESSION_STORE || "memory").toLowerCase() === "redis") {
+  const { RedisStore } = require("connect-redis");
+  const redisClient = require("./lib/redis");
+  sessionStore = new RedisStore({ client: redisClient, prefix: "session:" });
+}
 
 /**
  * Middleware for Different Environments
@@ -98,14 +109,13 @@ app.use(express.static(path.join(__dirname, "./public/frontend"))); // Serve sta
 
 /**
  * Session Management
- * Memory store should be replaced with Redis or other persistent stores in production.
  */
 app.use(
   session({
     secret: sessionConfig.secret, // Secret for signing session IDs
     resave: false, // Do not save session if it hasn't been modified
     saveUninitialized: true, // Save session even if uninitialized
-    store: memoryStore, // Store sessions in memory (for development)
+    store: sessionStore,
   })
 );
 
