@@ -33,6 +33,10 @@ const sendMessageToQueue = async () => {
     });
 };
 
-sendMessageToQueue();
+// Only run the demo call when this file is executed directly
+// (`node rabbitmq-producer-v1.js`), not as a side effect of require().
+if (require.main === module) {
+  sendMessageToQueue();
+}
 
 module.exports = sendMessageToQueue;

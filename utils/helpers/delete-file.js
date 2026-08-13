@@ -1,9 +1,7 @@
-const fs = require("fs");
+const fs = require("fs/promises");
 
 const deleteFile = async (path) => {
-  await fs.unlink(path, (err) => {
-    if (err) console.log(err);
-  });
+  await fs.unlink(path);
 };
 
 module.exports = deleteFile;
