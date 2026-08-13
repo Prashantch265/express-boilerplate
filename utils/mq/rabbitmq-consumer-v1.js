@@ -40,6 +40,10 @@ const receiveMessageFromQueue = async () => {
     });
 };
 
-receiveMessageFromQueue();
+// Only run the demo call when this file is executed directly
+// (`node rabbitmq-consumer-v1.js`), not as a side effect of require().
+if (require.main === module) {
+  receiveMessageFromQueue();
+}
 
 module.exports = receiveMessageFromQueue;

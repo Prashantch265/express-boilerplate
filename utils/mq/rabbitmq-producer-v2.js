@@ -66,7 +66,10 @@ const sendMessageToQueue = async (
   }
 };
 
-// Example usage: Send a custom message with retry logic
-sendMessageToQueue(rabbitMq.queue, "Test message with retry logic", 3, 1000);
+// Only run the demo call when this file is executed directly
+// (`node rabbitmq-producer-v2.js`), not as a side effect of require().
+if (require.main === module) {
+  sendMessageToQueue(rabbitMq.queue, "Test message with retry logic", 3, 1000);
+}
 
 module.exports = sendMessageToQueue;
