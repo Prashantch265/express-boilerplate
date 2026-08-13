@@ -2,6 +2,7 @@ const { getPaginationParams } = require("@utils");
 const AdminRepository = require("./admin.repository");
 const bcrypt = require("bcrypt");
 const { formatPaginatedResponse } = require("@utils/index");
+const { AuthException } = require("@exceptions");
 
 const createNewAdmin = async (admin) => {
   const salt = await bcrypt.genSalt(10);
@@ -37,7 +38,7 @@ const getAllAdminUsers = async (pageNo, size, sort, sortBy) => {
   return formatPaginatedResponse(count, rows, limit, offset);
 };
 
-const getAdminDetailsByUserId = async (userId) => {
+const getUserByUserId = async (userId) => {
   return await AdminRepository.getAdminByUserId(userId);
 };
 
@@ -46,10 +47,23 @@ const deleteAdmin = async (userId) => {
   return result;
 };
 
+// Used by the JWT passport strategy (which only knows userId + userType) and
+// by the password login flow below.
+const validateCredentials = async (email, password) => {
+  const admin = await AdminRepository.findOneAdmin({ where: { email } });
+  if (!admin) throw new AuthException("invalid Email or Password");
+
+  const passwordMatches = await bcrypt.compare(password, admin.password);
+  if (!passwordMatches) throw new AuthException("invalid Email or Password");
+
+  return await AdminRepository.getAdminByUserId(admin.userId);
+};
+
 module.exports = {
   createNewAdmin,
   updateExistingAdmin,
   getAllAdminUsers,
-  getAdminDetailsByUserId,
+  getUserByUserId,
   deleteAdmin,
+  validateCredentials,
 };

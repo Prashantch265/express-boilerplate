@@ -1,5 +1,5 @@
-const { logger } = require("../utils/logger");
-const authController = require("../auth/auth.controller");
+const { logger } = require("../utils");
+const UsersRepository = require("../app/core/users/users.repository");
 
 /**
  * Serializes the user ID into the session.
@@ -20,7 +20,7 @@ const deserializeUser = (passport) => {
   passport.deserializeUser(async (userId, done) => {
     try {
       logger.info(`Deserializing user with userId: ${userId}`);
-      const user = await authController.findByuserId(userId);
+      const user = await UsersRepository.getByUserId(userId);
       done(null, user);
     } catch (error) {
       logger.error(

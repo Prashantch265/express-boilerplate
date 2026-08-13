@@ -7,7 +7,7 @@ module.exports = {
    * Database Dialect Configuration
    * Chooses between supported databases (PostgreSQL, MySQL, etc.)
    */
-  dialect: process.env.DIALECT || { postgres: "postgres", mysql: "mysql" }, // Default dialects for both Postgres and MySQL
+  dialect: process.env.DIALECT || "postgres", // Dialect Sequelize should connect with
 
   /**
    * JWT Token Configuration
