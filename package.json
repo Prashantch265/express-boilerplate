@@ -95,6 +95,9 @@
   },
   "jest": {
     "testEnvironment": "node",
+    "setupFiles": [
+      "<rootDir>/tests/jest.setup.js"
+    ],
     "moduleNameMapper": {
       "^@app$": "<rootDir>/app",
       "^@app/(.*)$": "<rootDir>/app/$1",
