@@ -1,6 +1,8 @@
 // Load environment variables from the corresponding .env file
 // If NODE_ENV is not defined, it will load from the default ".env" file
-require("dotenv").config({ path: `.env.${process.env.NODE_ENV || ".env"}` });
+require("dotenv").config({
+  path: `.env${process.env.NODE_ENV ? "." + process.env.NODE_ENV : ""}`,
+});
 
 /**
  * PostgreSQL migration configuration
@@ -12,7 +14,7 @@ const pgMigrationConfig = {
   username: process.env.POSTGRES_USER || "postgres", // PostgreSQL username
   password: process.env.POSTGRES_PASSWORD || "postgres", // PostgreSQL password
   database: process.env.POSTGRES_DATABASE || "express-boilerplate", // PostgreSQL database name
-  dialect: "postgresql", // Specify the dialect for PostgreSQL
+  dialect: "postgres", // Specify the dialect for PostgreSQL
 };
 
 /**
