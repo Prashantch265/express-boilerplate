@@ -89,6 +89,7 @@ const hardDeleteAdmin = async (userId) => {
 };
 
 module.exports = {
+  findOneAdmin,
   createAdmin,
   updateAdmin,
   getAllAdmins,

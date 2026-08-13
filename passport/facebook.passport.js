@@ -1,7 +1,8 @@
 const FacebookStrategy = require("passport-facebook").Strategy;
-const { controllers } = require("../app/users");
-const { serializeUser, deserializeUser } = require("./passport-utils");
-const { facebook } = require("../configs/oauth-config");
+const { controllers } = require("../app/core/users");
+const { serializeUser, deserializeUser } = require("./utils.passport");
+const { oauth } = require("../configs/config");
+const { facebook } = oauth;
 const { logger } = require("../utils");
 
 /**

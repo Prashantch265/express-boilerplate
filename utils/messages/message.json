@@ -20,7 +20,7 @@
     "delete": "%s deleted successfully",
     "remove": "%s removed successfully",
     "register": "%s registered successfully",
-    "loggedIn": "logged in successfully",
+    "loggedIn": "%s logged in successfully",
     "stored": "%s stored successfully",
     "publish": "%s published successfully",
     "verify": "%s verified successfully"

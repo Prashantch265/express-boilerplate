@@ -5,7 +5,7 @@ const { loginWithPasswordSchema } = require("./auth.validation");
 module.exports = (router) => {
   router.route("/auth/login-with-google").get(AuthController.loginWithGoogle);
 
-  router.route("/auth/google/cb").get(AuthController);
+  router.route("/auth/google/cb").get(AuthController.loginWithGoogle);
 
   router
     .route("/auth/login/:userType")
